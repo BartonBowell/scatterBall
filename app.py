@@ -141,6 +141,7 @@ custom_css = '''
 # Add the custom CSS to the Panel configuration
 pn.config.raw_css.append(custom_css)
 
-# Serve the dashboard
-dashboard.servable()
+app = dashboard.servable()
 
+if __name__ == "__main__":
+    pn.serve(app, address="0.0.0.0", port=8000)
